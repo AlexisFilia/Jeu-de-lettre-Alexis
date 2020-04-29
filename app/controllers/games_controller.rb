@@ -15,6 +15,6 @@ class GamesController < ApplicationController
     @parties.each do |partie|
       total_score += partie.score
     end
-    @game.update(:total_score total_score)
+    # @game.update(:total_score total_score)
   end
 end
