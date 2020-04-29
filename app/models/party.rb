@@ -12,10 +12,10 @@ class Party < ApplicationRecord
     vowels_array = vowels.split("")
     consonants_array = consonants.split("")
     for i in (0...5)
-      ten_letters_list << ["#{vowels_array.sample}"]
+      ten_letters_list << vowels_array.sample
     end
     for i in (0...5)
-      ten_letters_list << ["#{consonants_array.sample}"]
+      ten_letters_list << consonants_array.sample
     end
     return ten_letters_list
   end
