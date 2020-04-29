@@ -29,6 +29,7 @@ class PartiesController < ApplicationController
         @parties = @game.parties
         @vowels = @party.ten_letters_list.split("").first(5)
         @consonnes = @party.ten_letters_list.split("").last(5)
+        flash.now[:alert] = "Ces lettres ne sont pas dans la liste"
         render "parties/new" and return
       end
     end
@@ -46,6 +47,7 @@ class PartiesController < ApplicationController
       @parties = @game.parties
       @vowels = @party.ten_letters_list.split("").first(5)
       @consonnes = @party.ten_letters_list.split("").last(5)
+      flash.now[:alert] = "Ce mot n'est pas francais"
       render "parties/new" and return
     end
   end
