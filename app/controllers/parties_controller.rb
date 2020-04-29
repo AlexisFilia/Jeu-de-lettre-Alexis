@@ -2,7 +2,7 @@ class PartiesController < ApplicationController
   def new
     @game = Game.find(params[:game_id])
     @parties = @game.parties
-    if @parties.count < 6
+    if @parties.count < 5
       ten_letters_list = Party.letters_generation
       @party = Party.new(game: @game, ten_letters_list: ten_letters_list.join, word: "A remplir")
       @party.save!
@@ -26,7 +26,6 @@ class PartiesController < ApplicationController
         position = ten_letters_list.index(letter)
         ten_letters_list.delete_at(position)
       else
-        raise
         @parties = @game.parties
         @vowels = @party.ten_letters_list.split("").first(5)
         @consonnes = @party.ten_letters_list.split("").last(5)
@@ -42,9 +41,8 @@ class PartiesController < ApplicationController
     if array_dico.include?(word)
       score = word.length
       @party.update(score: score)
-      raise
+      redirect_to new_game_party_path(@game)
     else
-      raise
       @parties = @game.parties
       @vowels = @party.ten_letters_list.split("").first(5)
       @consonnes = @party.ten_letters_list.split("").last(5)

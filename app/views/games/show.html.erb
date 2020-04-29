@@ -1,2 +1,14 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<!-- Three -->
+  <section id="three" class="wrapper">
+    <div class="inner">
+      <header class="align-center">
+        <h2>Felicitation, tu as fini les 5 manches</h2>
+        <p>Ton score total est <%=  %></p>
+      </header>
+      <div class="flex flex-2">
+        <article>
+          <%= link_to "Refaire une partie?", games_path, method: :post, class: "button special" %>
+        </article>
+      </div>
+    </div>
+  </section>
