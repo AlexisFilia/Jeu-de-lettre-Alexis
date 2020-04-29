@@ -10,7 +10,6 @@ class PartiesController < ApplicationController
       @vowels = ten_letters_list.first(5)
       @consonnes = ten_letters_list.last(5)
     else
-      raise
       redirect_to game_path(@game)
     end
   end
