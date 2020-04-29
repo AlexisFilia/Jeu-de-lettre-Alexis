@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
   resources :games, only: [:new, :create, :show], shallow: true do
-    resources :parties, only: [:new, :create, :show], shallow: true do
+    resources :parties, only: [:new, :show], shallow: true do
       resources :solutions, only: [:new, :create, :show]
     end
   end

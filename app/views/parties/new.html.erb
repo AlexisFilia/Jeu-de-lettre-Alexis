@@ -1,2 +1,29 @@
-<h1>Parties#new</h1>
-<p>Find me in app/views/parties/new.html.erb</p>
+<!-- Three -->
+  <section id="three" class="wrapper">
+    <div class="inner">
+      <header class="align-center">
+        <h2>Manche <%= @parties.count + 1 %></h2>
+        <p>Trouve le mot le plus long possible avec les lettres usuivantes : </p>
+      </header>
+      <div class="flex flex-2">
+        <article>
+          <header>
+            <h3>Les voyelles :</h3>
+              <% @vowels.each do |letter| %>
+                <div><%= letter %></div>
+              <% end %>
+            <h3>Les consonnes :</h3>
+              <% @consonnes.each do |letter| %>
+                <div><%= letter %></div>
+              <% end %>
+          </header>
+        </article>
+        <article>
+          <%= simple_form_for @party, :url => party_path(@party), :method => :get do |f| %>
+            <%= f.input :word %>
+            <%= f.button :submit, "Tester ce mot", class: "button special" %>
+          <% end %>
+        </article>
+      </div>
+    </div>
+  </section>

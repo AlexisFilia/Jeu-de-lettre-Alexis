@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_04_29_171300) do
 
   create_table "games", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.integer "total_score", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_games_on_user_id"
@@ -24,10 +25,11 @@ ActiveRecord::Schema.define(version: 2020_04_29_171300) do
 
   create_table "parties", force: :cascade do |t|
     t.bigint "game_id", null: false
+    t.integer "score", default: 0
+    t.string "word", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "ten_letters_list"
-    t.string "word"
     t.boolean "available"
     t.index ["game_id"], name: "index_parties_on_game_id"
   end

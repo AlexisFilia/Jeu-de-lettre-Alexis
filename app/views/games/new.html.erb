@@ -1,2 +1,21 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
+<!-- Three -->
+  <section id="three" class="wrapper">
+    <div class="inner">
+      <header class="align-center">
+        <h2>Pret à jouer?</h2>
+        <p>Tu es sûr de bien avoir lu les règles du jeu? </p>
+      </header>
+      <p>Une partie se joue en 5 manches. Le but étant de faire le plus de points cumulés sur les 5 manches.</p>
+      <p>Pour chaque manche, le but est de trouver le mot le plus long qu'il est possible de faire avec les 1à lettres proposées (5consonnes et 5 voyelles).</p>
+      <div class="flex flex-2">
+        <article>
+          <header>
+            <h3>Click ici pour commencer la partie :</h3>
+          </header>
+          <footer>
+            <%= link_to "Commencer la première manche", games_path, method: :post, class: "button special" %>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
